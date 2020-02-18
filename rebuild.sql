@@ -1,6 +1,7 @@
 SET FOREIGN_KEY_CHECKS = 0;
 
 DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `admin`;
 DROP TABLE IF EXISTS `manager`;
 DROP TABLE IF EXISTS `award`;
 DROP TABLE IF EXISTS `region`;
@@ -41,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `award` (
     recipientEmail VARCHAR(128) NOT NULL,
     createdOn DATETIME DEFAULT CURRENT_TIMESTAMP(),
     createdBy INT NOT NULL,
-    FOREIGN KEY (createdBy) REFERENCES `manager` (id)
+    FOREIGN KEY (createdBy) REFERENCES `manager` (user_id)
 ) engine = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `region` (
