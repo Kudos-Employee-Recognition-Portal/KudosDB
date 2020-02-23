@@ -1,4 +1,4 @@
-# Test queries to cover data access needs of KudosAPI.
+# Test select queries to cover data access needs of KudosAPI.
 
 # Select all fields all users.
 SELECT *

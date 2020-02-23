@@ -1,3 +1,6 @@
+# DB REBUILD SCRIPT
+# WARNING: drops all tables for fresh build of db schema.
+
 SET FOREIGN_KEY_CHECKS = 0;
 SET AUTOCOMMIT = 0;
 

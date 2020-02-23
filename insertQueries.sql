@@ -1,4 +1,4 @@
-# Test queries to cover data access needs of KudosAPI.
+# Test insert queries to cover data access needs of KudosAPI.
 
 # Inserts should be committed via transactions from the API to ensure ROLLBACK on failure.
 # Insert an admin user.

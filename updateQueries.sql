@@ -1,4 +1,4 @@
-# Test queries to cover data access needs of KudosAPI.
+# Test update queries to cover data access needs of KudosAPI.
 
 # Update user info.
 UPDATE `user`

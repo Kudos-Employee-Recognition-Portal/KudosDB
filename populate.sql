@@ -1,4 +1,4 @@
-# Queries to populate tables with baseline sample testing data.
+# Test insert queries to populate tables with baseline sample testing data.
 
 # Individual user insertion in application should be performed as transactions in
 #   order to ensure atomiticity.
