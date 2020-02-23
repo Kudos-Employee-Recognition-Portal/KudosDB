@@ -1,57 +1,59 @@
+# Test queries to cover data access needs of KudosAPI.
+
 # Select all fields all users.
-select *
-from user;
+SELECT *
+FROM user;
 
 # Select all fields for user by email.
-select *
-from user
-where email = ?;
+SELECT *
+FROM user
+WHERE email = ?;
 
 # Select fields for all admin users.
-select id, type, email, createdon, createdby
-from user
-         join admin a on user.id = a.user_id;
+SELECT id, type, email, createdon, createdby
+FROM user
+         JOIN admin a ON user.id = a.user_id;
 
 # Select fields for admin user by id.
-select id, type, email, createdon, createdby
-from user
-         join admin a on user.id = a.user_id
-where a.user_id = ?;
+SELECT id, type, email, createdon, createdby
+FROM user
+         JOIN admin a ON user.id = a.user_id
+WHERE a.user_id = ?;
 
 # Select fields for all manager users.
-select id, type, email, createdOn, createdBy, firstName, lastName, signatureURL
-from user
-         join manager m on user.id = m.user_id;
+SELECT id, type, email, createdOn, createdBy, firstName, lastName, signatureURL
+FROM user
+         JOIN manager m ON user.id = m.user_id;
 
 # Select fields for manager user by id.
-select id, type, email, createdOn, createdBy, firstName, lastName, signatureURL
-from user
-         join manager m on user.id = m.user_id
-where m.user_id = ?;
+SELECT id, type, email, createdOn, createdBy, firstName, lastName, signatureURL
+FROM user
+         JOIN manager m ON user.id = m.user_id
+WHERE m.user_id = ?;
 
 # Select all fields all awards.
-select *
-from award;
+SELECT *
+FROM award;
 
 # Select all fields all awards joined tables.
-select *
-from award
-         join region r on award.region_id = r.id
-         join manager m on award.createdBy = m.user_id;
+SELECT *
+FROM award
+         JOIN region r ON award.region_id = r.id
+         JOIN manager m ON award.createdBy = m.user_id;
 
 # Select all fields joined table by award id.
-select *
-from award
-         join region r on award.region_id = r.id
-         join manager m on award.createdBy = m.user_id
-where award.id = ?;
+SELECT *
+FROM award
+         JOIN region r ON award.region_id = r.id
+         JOIN manager m ON award.createdBy = m.user_id
+WHERE award.id = ?;
 
 # Select all fields joined table by creating manager's id.
-select *
-from award
-         join region r on award.region_id = r.id
-         join manager m on award.createdBy = m.user_id
-where m.user_id = ?;
+SELECT *
+FROM award
+         JOIN region r ON award.region_id = r.id
+         JOIN manager m ON award.createdBy = m.user_id
+WHERE m.user_id = ?;
 
 # Select all fields all awards based on parameters:
 #   createdOn: should have a default begin and end date,
@@ -61,13 +63,13 @@ where m.user_id = ?;
 #   like award recipient email string,
 #   region id,
 #   manager id.
-select *
-from award
-         join region r on award.region_id = r.id
-         join manager m on award.createdBy = m.user_id
-where (award.createdOn between ? and ?)
-  and (? is null or award.type like ?)
-  and (? is null or award.recipientName like ?)
-  and (? is null or award.recipientEmail like ?)
-  and (? is null or r.id = ?)
-  and (? is null or m.user_id = ?);
+SELECT *
+FROM award
+         JOIN region r ON award.region_id = r.id
+         JOIN manager m ON award.createdBy = m.user_id
+WHERE (award.createdOn BETWEEN ? AND ?)
+  AND (? IS NULL OR award.type LIKE ?)
+  AND (? IS NULL OR award.recipientName LIKE ?)
+  AND (? IS NULL OR award.recipientEmail LIKE ?)
+  AND (? IS NULL OR r.id = ?)
+  AND (? IS NULL OR m.user_id = ?);
