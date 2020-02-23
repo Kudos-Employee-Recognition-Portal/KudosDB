@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `award` (
     type VARCHAR(64) NOT NULL,
     recipientName VARCHAR(64) NOT NULL,
     recipientEmail VARCHAR(128) NOT NULL,
-    createdOn DATETIME DEFAULT CURRENT_TIMESTAMP(),
+    createdOn DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
     createdBy INT NOT NULL,
     # It might be nice to maintain awards for deleted managers but would require a rework of select queries.
     FOREIGN KEY (createdBy) REFERENCES `manager` (user_id) ON DELETE CASCADE
