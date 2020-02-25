@@ -3,11 +3,6 @@
 # Individual user insertion in application should be performed as transactions in
 #   order to ensure atomiticity.
 
-INSERT INTO userType (description)
-VALUES
-(‘admin’),
-(‘manager’);
-
 INSERT INTO region (name)
 VALUES
 (‘Test Region’),
@@ -22,42 +17,121 @@ VALUES
 (‘North America - Pacific’);
 
 
-INSERT INTO user (firstName, lastName, email, userTypeID, password, createdOn, createdBy, timestamp)
+INSERT INTO user (type, email, password, createdBy)
 VALUES 
-('Gudrun','Nero','Gudrun.Nero@test.com',2,'Gudrun123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Cristine','Hanley','Cristine.Hanley@test.com',2,'Cristine123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Mario','Labonte','Mario.Labonte@test.com',2,'Mario123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Sharolyn','Wiegand','Sharolyn.Wiegand@test.com',2,'Sharolyn123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Madeleine','Yellowhair','Madeleine.Yellowhair@test.com',2,'Madeleine123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Diann','Fenwick','Diann.Fenwick@test.com',2,'Diann123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Arnold','Navarra','Arnold.Navarra@test.com',2,'Arnold123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Edgar','Waiters','Edgar.Waiters@test.com',2,'Edgar123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Blanche','Guerrero','Blanche.Guerrero@test.com',2,'Blanche123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Danica','Bizzell','Danica.Bizzell@test.com',2,'Danica123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Fabian','Coutts','Fabian.Coutts@test.com',2,'Fabian123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Dedra','Ashbaugh','Dedra.Ashbaugh@test.com',2,'Dedra123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Charlesetta','Hudak','Charlesetta.Hudak@test.com',2,'Charlesetta123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Harry','Pineiro','Harry.Pineiro@test.com',2,'Harry123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Leatha','Demmer','Leatha.Demmer@test.com',2,'Leatha123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Elene','Laws','Elene.Laws@test.com',2,'Elene123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Melissa','Boser','Melissa.Boser@test.com',2,'Melissa123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Alesha','Olivas','Alesha.Olivas@test.com',2,'Alesha123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Jonell','Albaugh','Jonell.Albaugh@test.com',2,'Jonell123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Austin','Franz','Austin.Franz@test.com',2,'Austin123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Willy','Hathorn','Willy.Hathorn@test.com',2,'Willy123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Jada','Hollenbeck','Jada.Hollenbeck@test.com',2,'Jada123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Melvin','Wilcher','Melvin.Wilcher@test.com',2,'Melvin123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Leesa','Bettcher','Leesa.Bettcher@test.com',2,'Leesa123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Amos','Wickliffe','Amos.Wickliffe@test.com',2,'Amos123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Gwyn','Abelson','Gwyn.Abelson@test.com',2,'Gwyn123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Leandro','Isham','Leandro.Isham@test.com',2,'Leandro123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Hazel','Melgar','Hazel.Melgar@test.com',2,'Hazel123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Cassie','Feiler','Cassie.Feiler@test.com',2,'Cassie123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Takako','Randall','Takako.Randall@test.com',2,'Takako123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP),
-('Junita','Eddy','Junita.Eddy@test.com',2,'Junita123@',CURRENT_TIMESTAMP,1,CURRENT_TIMESTAMP);
+('admin','Gudrun.Nero@test.com','Gedrun123!',1),
+('admin','Cristine.Hanley@test.com','Cristine123!',1),
+('admin','Mario.Labonte@test.com','Mario123!',1),
+('admin','Sharolyn.Wiegand@test.com','Sharolyn123!',1),
+('admin','Madeleine.Yellowhair@test.com','Madeleine123!',1),
+('admin','Diann.Fenwick@test.com','Diann123!',1),
+('admin','Arnold.Navarra@test.com','Arnold123!',1),
+('admin','Edgar.Waiters@test.com','Edgar123!',1),
+('admin','Blanche.Guerrero@test.com','Blanche123!',1),
+('admin','Danica.Bizzell@test.com','Danica123!',1),
+('manager','Fabian.Coutts@test.com','Fabian123!',1),
+('manager','Dedra.Ashbaugh@test.com','Dedra123!',1),
+('manager','Charlesetta.Hudak@test.com','Charlesetta123!',1),
+('manager','Harry.Pineiro@test.com','Harry123!',1),
+('manager','Leatha.Demmer@test.com','Leatha123!',1),
+('manager','Elene.Laws@test.com','Elene123!',1),
+('manager','Melissa.Boser@test.com','Melissa123!',1),
+('manager','Alesha.Olivas@test.com','Alesha123!',1),
+('manager','Jonell.Albaugh@test.com','Jonell123!',1),
+('manager','Austin.Franz@test.com','Austin123!',1),
+('manager','Willy.Hathorn@test.com','Willy123!',1),
+('manager','Jada.Hollenbeck@test.com','Jada123!',1),
+('manager','Melvin.Wilcher@test.com','Melvin123!',1),
+('manager','Leesa.Bettcher@test.com','Leesa123!',1),
+('manager','Amos.Wickliffe@test.com','Amos123!',1),
+('manager','Gwyn.Abelson@test.com','Gwyn123!',1),
+('manager','Leandro.Isham@test.com','Leandro123!',1),
+('manager','Hazel.Melgar@test.com','Hazel123!',1),
+('manager','Cassie.Feiler@test.com','Cassie123!',1),
+('manager','Takako.Randall@test.com','Takako123!',1),
+('manager','Junita.Eddy@test.com','Junita123!',1),
+('manager','Roland.Malachi@test.com','Roland123!',1),
+('manager','Mellisa.Boivin@test.com','Mellisa123!',1),
+('manager','Eunice.Dotts@test.com','Eunice123!',1),
+('manager','Vinnie.Curl@test.com','Vinnie123!',1),
+('manager','Clint.Darlington@test.com','Clint123!',1),
+('manager','Anne.Ordway@test.com','Anne123!',1),
+('manager','Sylvester.Overbey@test.com','Sylvester123!',1),
+('manager','Jacob.Gilleland@test.com','Jacob123!',1),
+('manager','Donald.Yelton@test.com','Donald123!',1),
+('manager','Leola.Lemoine@test.com','Leola123!',1),
+('manager','Patria.Salmon@test.com','Patria123!',1),
+('manager','Anisha.Eilers@test.com','Anisha123!',1),
+('manager','Ria.Vita@test.com','Ria123!',1),
+('manager','Shaunna.Rossiter@test.com','Shaunna123!',1),
+('manager','Renea.Dery@test.com','Renea123!',1),
+('manager','Margorie.Altizer@test.com','Margorie123!',1),
+('manager','Yael.Laroche@test.com','Yael123!',1),
+('manager','Velva.Corrao@test.com','Velva123!',1),
+('manager','Apolonia.Eppler@test.com','Apolonia123!',1);
 
 
-INSERT INTO award (regionID, type, recipientName, recipientEmail, timestamp, creatorID)
+
+INSERT INTO manager (user_id, firstName, lastName)
+VALUES
+(10,'Danica','Bizzel'),
+(11,'Fabian','Coutts'),
+(12,'Dedra','Ashbaugh'),
+(13,'Charlesetta','Hudak'),
+(14,'Harry','Pineiro'),
+(15,'Leatha','Demmer'),
+(16,'Elene','Laws'),
+(17,'Melissa','Boser'),
+(18,'Alesha','Olivas'),
+(19,'Jonell','Albaugh'),
+(20,'Austin','Franz'),
+(21,'Willy','Hathorn'),
+(22,'Jada','Hollenbeck'),
+(23,'Melvin','Wilcher'),
+(24,'Leesa','Bettcher'),
+(25,'Amos','Wickliffe'),
+(26,'Gwyn','Abelson'),
+(27,'Leandro','Isham'),
+(28,'Hazel','Melgar'),
+(29,'Cassie','Feiler'),
+(30,'Takako','Randall'),
+(31,'Junita','Eddy'),
+(32,'Roland','Malachi'),
+(33,'Mellisa','Boivin'),
+(34,'Eunice','Dotts'),
+(35,'Vinnie','Curl'),
+(36,'Clint','Darlington'),
+(37,'Anne','Ordway'),
+(38,'Sylvester','Overbey'),
+(39,'Jacob','Gilleland'),
+(40,'Donald','Yelton'),
+(41,'Leola','Lemoine'),
+(42,'Patria','Salmon'),
+(43,'Anisha','Eilers'),
+(44,'Ria','Vita'),
+(45,'Shaunna','Rossiter'),
+(46,'Renea','Dery'),
+(47,'Margorie','Altizer'),
+(48,'Yael','Laroche'),
+(49,'Velva','Corrao'),
+(50,'Apolonia','Eppler');
+
+
+INSERT INTO admin (user_id)
+VALUES
+(0)
+(1)
+(2)
+(3)
+(4)
+(5)
+(6)
+(7)
+(8)
+(9)
+
+
+INSERT INTO award (region_id, type, recipientName, recipientEmail, createdOn, createdBy)
 VALUES
 (2,'Employee of the Month','Joe Something','Joe.Something@test.com',CURRENT_TIMESTAMP,1),
 (1,'Award 2','Samantha','Samantha.Enlish@test.com',CURRENT_TIMESTAMP,1),
