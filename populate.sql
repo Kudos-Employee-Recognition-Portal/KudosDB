@@ -5,16 +5,16 @@
 
 INSERT INTO region (name)
 VALUES
-(‘Test Region’),
-(‘North America’),
-(‘South America’),
-(‘Asia/Pacific’),
-(‘Europe’),
-(‘Africa’),
-(‘North America - Eastern’),
-(‘North America - Central’),
-(‘North America - Mountain’),
-(‘North America - Pacific’);
+('Test Region'),
+('North America'),
+('South America'),
+('Asia/Pacific'),
+('Europe'),
+('Africa'),
+('North America - Eastern'),
+('North America - Central'),
+('North America - Mountain'),
+('North America - Pacific');
 
 
 INSERT INTO user (type, email, password, createdBy)
